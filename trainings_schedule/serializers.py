@@ -8,7 +8,7 @@ class TrainingsSerializer(serializers.ModelSerializer):
     """
     Serializer for Training model
     """
-    date = serializers.DateField(format="%d.%m.%Y", input_formats=['%d.%m.%Y'])
+    date = serializers.DateField(format="%Y.%m.%d", input_formats=['%Y.%m.%d'])
     time = serializers.TimeField(format="%H:%M", input_formats=['%H:%M'])
 
     class Meta:
