@@ -8,7 +8,7 @@ class TrainingsSerializer(serializers.ModelSerializer):
     """
     Serializer for Training model
     """
-    date = serializers.DateField(format="%Y.%m.%d", input_formats=['%Y.%m.%d'])
+    date = serializers.DateField(format="%Y-%m-%d", input_formats=['%Y-%m-%d'])
     time = serializers.TimeField(format="%H:%M", input_formats=['%H:%M'])
 
     class Meta:
@@ -34,6 +34,6 @@ class TrainingsSerializer(serializers.ModelSerializer):
         :raise Validation error in case of incorrect time
         """
         data = self.get_initial()
-        if time < datetime.datetime.now().time() and data['date'] == datetime.date.today().strftime("%d.%m.%Y"):
+        if time < datetime.datetime.now().time() and data['date'] == datetime.date.today().strftime("%d-%m-%Y"):
             raise serializers.ValidationError('This time already passed')
         return time
