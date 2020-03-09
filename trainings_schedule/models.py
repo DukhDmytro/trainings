@@ -21,7 +21,10 @@ class Training(models.Model):
         """
         Check that date and time are correct. Accept dates and time that are today now or future dates and time.
         """
-        if self.date < datetime.date.today():
-            raise ValidationError('You can add training only for today or future dates')
-        if self.time < datetime.datetime.now().time() and self.date == datetime.date.today():
-            raise ValidationError('This time already passed')
+        try:
+            if self.date < datetime.date.today():
+                raise ValidationError('You can add training only for today or future dates')
+            if self.time < datetime.datetime.now().time() and self.date == datetime.date.today():
+                raise ValidationError('This time already passed')
+        except TypeError:
+            raise ValidationError('Incorrect value of date or time')

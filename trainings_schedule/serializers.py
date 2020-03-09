@@ -34,6 +34,6 @@ class TrainingsSerializer(serializers.ModelSerializer):
         :raise Validation error in case of incorrect time
         """
         data = self.get_initial()
-        if time < datetime.datetime.now().time() and data['date'] == datetime.date.today().strftime("%d-%m-%Y"):
+        if time < datetime.datetime.now().time() and data['date'] == datetime.date.today().strftime("%Y-%m-%d"):
             raise serializers.ValidationError('This time already passed')
         return time
