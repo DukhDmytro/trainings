@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.pagination import PageNumberPagination
 
 from .models import Training
 from .serializers import TrainingsSerializer
@@ -10,6 +11,7 @@ class TrainingViewSet(ModelViewSet):
     queryset = Training.objects.all()
     serializer_class = TrainingsSerializer
     lookup_field = 'id'
+    pagination_class = PageNumberPagination
 
     def get_permissions(self):
         if self.action == 'create':
