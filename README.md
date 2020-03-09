@@ -3,7 +3,7 @@
 
 Object of this task is to create a REST API to manage the training schedule.
 User can register, login with JWT, get list of trainings and detils about single training.
-Admin can add training to schedule, delete or update it using API or Django Admin panel.
+Admin can add training to schedule, delete or update it using API or Django Admin panel. Admin can get list of users, detail information about user, update user info, delete user.
 
 ## Admin panel and API documentation deployed on Heroku
 Admin username: admin
