@@ -7,6 +7,7 @@ Admin can add training to schedule, delete or update it using API or Django Admi
 
 ## Admin panel and API documentation deployed on Heroku
 Admin username: admin
+
 Admin password: admin
 
 [https://training-schedule.herokuapp.com/admin/](https://training-schedule.herokuapp.com/admin/)
